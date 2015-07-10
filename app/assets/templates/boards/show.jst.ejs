@@ -1,4 +1,6 @@
 <%= board.escape("title") %>
-<% lists.forEach(function(list){ %>
+<% board.lists().forEach(function(list){ %>
   <%= list.escape("title") %>
 <% }) %>
+<ul class="lists"></ul>
+<div  class="lists-new"></div>

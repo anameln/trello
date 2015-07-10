@@ -1,3 +1,18 @@
 TrelloClone.Models.Board = Backbone.Model.extend({
-  urlRoot: "api/boards"
-})
+  urlRoot: "api/boards",
+
+  lists: function () {
+    this._lists = this._lists ||
+      new TrelloClone.Collections.BoardLists([], { board: this });
+    return this._lists;
+  },
+
+  parse: function (load) {
+    if (load.lists) {
+      this.lists().set(load.comments, { parse: true });
+    }
+
+    return load;
+  }
+
+});
