@@ -16,3 +16,68 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import "font-awesome";
+
+html, body, figure, figcaption, ul, li, h1 {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  text-align: inherit;
+}
+
+body {
+  background: #F0F0FF;
+
+}
+
+ul {
+  list-style: none;
+}
+
+ul.lists {
+
+  width: 100%;
+  height: 200px;
+
+
+  cursor: pointer;
+}
+
+ul.lists > li {
+  float: left;
+  width: 100px;
+  border: solid #CC99FF 1px;
+
+  height: 200px;
+  background: white;
+
+}
+
+.group:after {
+  content: "";
+  clear: both;
+  display: block;
+}
+
+.invisible {
+  display: none
+}
+
+.invisible {
+  display: none
+}
+
+#add-card.visible {
+  display: inline
+}
+
+
+
+
+// json.(@board, :title)
+// json.lists(@board.lists) do |list|
+//   json.extract! list, :title
+//   json.cards(list.cards) do |card|
+//     json.extract! card, :title, :description
+//   end
+// end

@@ -14,13 +14,14 @@ TrelloClone.Views.BoardsNew = Backbone.View.extend({
 
   submit: function () {
     event.preventDefault();
-    var params = this.$("form").serializeJSON();
+
+    var params = this.$("form").serializeJSON()["board"];
     var board = new TrelloClone.Models.Board();
     board.set(params)
     board.save({}, {
       success: function () {
         TrelloClone.boards.add(board);
-        Backbone.history.navigate("/", {trigger: true});
+        Backbone.history.navigate("boards/" + board.get("id"), {trigger: true});
       }
     });
   }

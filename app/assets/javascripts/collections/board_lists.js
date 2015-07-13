@@ -3,5 +3,9 @@ TrelloClone.Collections.BoardLists = Backbone.Collection.extend({
 
   url: function () {
     return this.board.url() + "/lists"; //does it need one?
+  },
+
+  initialize: function (models, options) {
+    this.board = options.todo;
   }
 })
